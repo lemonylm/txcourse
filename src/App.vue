@@ -22,7 +22,7 @@
 }
 
 #nav a {
-  font-weight: bold;
+  font-weight:700;
   color: #2c3e50;
 }
 
