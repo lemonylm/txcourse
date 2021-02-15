@@ -9,6 +9,7 @@ import '@/assets/scripts/fastclick.js';
 import '@/assets/styles/resets.css';
 import '@/assets/styles/border.css';
 import '@/assets/styles/common.css';
+import '@/assets/styles/iconfont.css';
 
 Vue.config.productionTip = false
 

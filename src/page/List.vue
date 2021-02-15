@@ -1,25 +1,24 @@
 <template>
-  <div>
-      List Page
+  <div class="container">
+    <page-header :backIconShow="true" :listIconShow="false"></page-header>
   </div>
 </template>
 
 <script>
-import ListModel from '@/models/list'
-const listModel =new ListModel()
+// import IndexModel from "@/models/index";
+// const indexModel = new IndexModel();
+import PageHeader from "@/components/Header/Index";
+
 export default {
-name:'ListPage',
-async mounted() {
-    const fieldData = await listModel.getCourseFields(),
-    courseData = await listModel.getCourses('all')
-    console.log(fieldData,courseData);
-    
-},
-}
+  name: "ListPage",
+  components: {
+    PageHeader,
+  },
+};
 </script>
 
 <style lang='css' scoped>
-div{
-    color:skyblue;
+div {
+  color: pink;
 }
 </style>

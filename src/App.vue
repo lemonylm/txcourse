@@ -1,11 +1,12 @@
 <template>
   <div id="app">
-    <router-link to="/">首页</router-link>
-    <router-link to="/list">列表</router-link>
-    <router-view/>
+    <router-link to="/"></router-link>
+    <router-view></router-view>
   </div>
 </template>
 
-<style>
-
+<style scoped>
+a{
+font-size: .16rem;
+}
 </style>
