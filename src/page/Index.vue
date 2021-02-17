@@ -22,6 +22,6 @@ export default {
 
 <style lang='css' scoped>
 .container{
-  background-color: pink;
+  background-color: #eee;
 }
 </style>

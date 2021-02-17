@@ -2,78 +2,45 @@
   <div class="wrapper" ref="wrapper">
     <div class="content">
       <index-swiper :swiperData="swiperData"></index-swiper>
-      123 <br />
-      123 <br />
-      123 <br />
-      123 <br />
-      123 <br />
-      123 <br />
-      123 <br />
-      123 <br />
-      123 <br />
-      123 <br />
-      123 <br />
-      123 <br />
-      123 <br />
-      123 <br />
-      123 <br />
-      123 <br />
-      123 <br />
-      123 <br />
-      123 <br />
-      123 <br />
-      123 <br />
-      123 <br />
-      123 <br />
-      123 <br />
-      123 <br />
-      123 <br />
-      123 <br />
-      123 <br />
-      123 <br />
-      123 <br />
-      123 <br />
-      123 <br />
-      123 <br />
-      123 <br />
-      123 <br />
-      123 <br />
-      123 <br />
-      123 <br />
-      123 <br />
-      123 <br />
-      123 <br />
-      123 <br />
-      123 <br />
-      123 <br />
-      123 <br />
-      123 <br />
-      123 <br />
-      123 <br />
-      123 <br />
-      123 <br />
-      123 <br />
-      123 <br />
-      123 <br />
-      123 <br />
+      <main-title :data="{ field_name: '推荐课程', field: 'all' }"></main-title>
+      <recom-course-list :recomCourseData="recomCourseData"></recom-course-list>
+      <div v-if="fieldData.length > 0 && courseData.length > 0">
+        <main-title :data="fieldData[0]"></main-title>
+        <course-list :courseData="courseData | filterCourseData('0')"></course-list>
+        <main-title :data="fieldData[1]"></main-title>
+        <course-list :courseData="courseData | filterCourseData('1')"></course-list>
+        <main-title :data="fieldData[2]"></main-title>
+        <course-list :courseData="courseData | filterCourseData('2')"></course-list>
+        <main-title :data="fieldData[3]"></main-title>
+        <course-list :courseData="courseData | filterCourseData('3')"></course-list>
+      </div>
+    
     </div>
   </div>
 </template>
 
 <script>
 import BetterScroll from "better-scroll";
+
 import IndexSwiper from "@/components/ScrollWrapper/IndexSwiper/index";
+import MainTitle from "@/components/ScrollWrapper/MainTitle/index";
+import RecomCourseList from "@/components/ScrollWrapper/RecomCourseList/index";
+import CourseList from "@/components/ScrollWrapper/CourseList/index";
+
 import IndexModel from "@/models/index";
 const indexModel = new IndexModel();
 export default {
   name: "IndexScrollWrapper",
   components: {
     IndexSwiper,
+    MainTitle,
+    RecomCourseList,
+    CourseList,
   },
   data() {
     return {
       swiperData: [],
-      fieltData: [],
+      fieldData: [],
       courseData: [],
       recomCourseData: [],
     };
@@ -82,7 +49,7 @@ export default {
     this.getCourseDatas();
     this.scroll = new BetterScroll(this.$refs.wrapper, {
       mouseWheel: true,
-      ckick: true,
+      click: true,
       tap: true,
     });
   },
@@ -91,7 +58,7 @@ export default {
       const data = await indexModel.getCourseDatas();
       let res = data.result;
       this.swiperData = res.swipers;
-      this.fieltData = res.fields;
+      this.fieldData = res.fields;
       this.courseData = res.courses;
       this.recomCourseData = res.recomCourses;
     },
@@ -108,5 +75,8 @@ export default {
   box-shadow: 0 3px 12px 0 rgba(31, 38, 135, 0.37);
   border-radius: 5px;
   border: 1px solid rgba(255, 255, 255, 0.18); */
+}
+.content{
+  height: 19rem;
 }
 </style>

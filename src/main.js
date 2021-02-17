@@ -5,6 +5,7 @@ import store from './store'
 
 import '@/assets/scripts/common.js';
 import '@/assets/scripts/fastclick.js';
+import '@/utils/filters.js'
 
 import '@/assets/styles/resets.css';
 import '@/assets/styles/border.css';
