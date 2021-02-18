@@ -1,6 +1,7 @@
 <template>
   <div class="container">
     <page-header :backIconShow="true" :listIconShow="false"></page-header>
+    <list-tab :fieldData='fieldData'></list-tab>
   </div>
 </template>
 
@@ -8,6 +9,7 @@
 // import IndexModel from "@/models/index";
 // const indexModel = new IndexModel();
 import PageHeader from "@/components/Header/Index";
+import ListTab from "@/components/ListTab/Index";
 
 import ListModel from "@/models/list";
 const listModel = new ListModel();
@@ -15,6 +17,7 @@ export default {
   name: "ListPage",
   components: {
     PageHeader,
+    ListTab
   },
   data() {
     return {
