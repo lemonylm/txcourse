@@ -20,6 +20,7 @@ export default {
       console.log(1);
     },
   },
+ 
 };
 </script>
 
@@ -33,8 +34,8 @@ export default {
   box-sizing: border-box;
   border-right: 0.01rem solid #eee;
 }
-.tab-item .current{
-    color: aqua;
-    border-bottom: aqua 2px solid;
+.tab-item .current {
+  color: aqua;
+  border-bottom: aqua 2px solid;
 }
 </style>
