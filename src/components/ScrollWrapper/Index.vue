@@ -2,7 +2,7 @@
   <div class="wrapper" ref="wrapper">
     <div class="content">
       <index-swiper :swiperData="swiperData"></index-swiper>
-      <main-title :data="{ field_name: '推荐课程', field: 'all' }"></main-title>
+      <main-title :data="{ field_name: '推荐课程的', field: 'all' }"></main-title>
       <recom-course-list :recomCourseData="recomCourseData"></recom-course-list>
       <div v-if="fieldData.length > 0 && courseData.length > 0">
         <main-title :data="fieldData[0]"></main-title>
